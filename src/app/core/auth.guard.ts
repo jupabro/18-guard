@@ -6,7 +6,7 @@ import { map, mergeMap, tap } from 'rxjs/operators';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router)
-  return inject(UserService).isConnected().pipe(
+  return inject(UserService).getData().pipe(
     map((response) => {
       if (response === 'ANONYMOUS') {
         console.log("is not connected")

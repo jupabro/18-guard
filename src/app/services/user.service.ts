@@ -11,7 +11,7 @@ export class UserService {
 
   private role: UserRole = 'USER'
 
-  isConnected(): Observable<UserRole> {
+  getData(): Observable<UserRole> {
     console.log("fetching user data")
     return of(this.role).pipe(delay(3000))
   }
